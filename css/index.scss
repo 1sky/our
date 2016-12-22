@@ -1,0 +1,244 @@
+$list:320px,360px,375px,384px,412px,414px,600px,640px,768px,800px,1280px,1440px,1600px;
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 15px;
+    border: 0px;
+}
+*{
+    font-family: "微软雅黑";
+    box-sizing: border-box;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+    
+}
+@font-face{
+    font-family: 'iconfont';
+    
+}
+.iconfont{
+    font-family: 'iconfont';
+}
+ul,li,ol,a{
+    text-decoration: none;
+    list-style: none;
+}
+$m:375px;
+@each $w in $list{
+    @media screen and (min-width:#{$w}){
+        html{
+            font-size: 100px * $w/$m;
+        }
+    }
+}
+
+
+.outsite-d{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+    //  logo
+    .a{
+            width: 1.6rem;
+            height: 1.6rem;
+            background: #FFCB0C;
+            position: absolute;
+            top: -0.7rem;
+            left: -0.5;
+            transform: rotate(45deg);
+            z-index: 4;
+            .wen{
+                color: #fff;
+                position: fixed;
+                top: 0.9rem;
+                left: 0.5rem;
+                font-size: 25px;
+                transform: rotate(-45deg);
+            }
+        }
+//      侧滑
+        .b{
+            width: 1rem;
+            height: 0.4rem;
+            position: absolute;
+            right: 0;
+            top: 0.5rem;
+//          overflow: hidden;
+            z-index: 500;
+            .con-a{
+                width: 50%;
+                height: 100%;
+                float: left;
+                background: #FFCB0C;
+                color: #fff;
+                text-align: center;
+                line-height: 0.4rem;
+            }
+            .iconfont{
+                background: #5F6062;
+                color: #fff;
+            }
+            .cehua-a{
+                width: 2rem;
+                height: 3.6rem;
+                background: #5F6062;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                z-index: 2;
+                opacity: 0;
+                transform: translateX(2rem);
+                transition: all 1s;
+                .list-a{
+                    width: 100%;
+                    height: 0.6rem;
+                    border-bottom: 1px solid #6C6C6C;
+                    line-height: 0.6rem;
+                    .iconfont{
+                        color: #fff;
+                        float: left;
+                        margin-left: 0.25rem;
+                        font-size: 25px;
+                    }
+                    .list-b{
+                        float: left;
+                        color: #fff;
+                        margin-left: 0.2rem;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    .nav{
+            width: 100%;
+            height: 0.4rem;
+            background: rgba(102,102,102,0.4);
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: 4;
+            .footer{
+                width: 25%;
+                height: 100%;
+                float: left;
+                text-align: center;
+                line-height: 0.4rem;
+                .aaa{
+                    color: #fff;
+                }
+                .iconfont{
+                    color: #fff;
+                    font-size: 25px;
+                    display: none;
+                }
+            }
+        } 
+//  电话
+        @keyframes dong-a{
+            from{
+                opacity: 0;
+                right: -1rem;
+            }
+            to{
+                opacity: 1;
+                right: 0.1rem;
+            }
+        }
+        .phone{
+            width: 0.5rem;
+            height: 1.5rem;
+            position: fixed;
+            right: 0.1rem;
+            bottom: 2rem;
+//          background: red;
+            color: #FFCB0C;
+            animation: dong-a 3s;
+            .iconfont{
+                display: block;
+                width: 0.5rem;
+                height: 0.5rem;
+                font-size: 50px;
+                margin-top: 0.2rem;
+            }
+        }
+        .website{
+            width: 100%;
+            height: 100%;
+            .website-a{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @keyframes hua-a{
+            from{
+                opacity: 0;
+                left: -100%;
+            }
+            to{
+                opacity: 0.4;
+                left: 0;
+            }
+        }
+        @keyframes hua-b{
+            from{
+//              opacity: 0;
+//              left: 100%;
+                transform: scale(0);
+//              transform: rotate(0deg);
+            }
+            to{
+//              opacity: 1;
+//              left: 0;
+                transform: scale(1);
+//              transform: rotate(360deg);
+            }
+        }
+        .zhe{
+            width: 100%;
+            height: 2rem;
+            background: rgba(0,0,0,0.4);
+            position: absolute;
+            top: 2rem;
+            left: 0;
+            animation: hua-a 2s;
+        }
+        .zhezhao{
+            width: 100%;
+            height: 2rem;
+            position: absolute;
+            top: 2rem;
+            left: 0;
+//          transform: scale(0);
+            animation: hua-b 2s ;
+            animation-delay: 2s;
+            animation-fill-mode: backwards;
+            .zhezhao-a{
+                font-size: 30px;
+                color: #fff;
+                margin-top: 0.3rem;
+                margin-left: 0.3rem;
+            }
+            .zhezhao-b{
+                color: #fff;
+                margin-left: 0.3rem;
+                font-family: "宋体";
+                letter-spacing: 2px;
+                font-size: 18px;
+                margin-top: 0.03rem;
+            }
+            .zhezhao-c{
+                color: #fff;
+                margin-left: 0.3rem;
+                margin-top: 0.15rem;
+            }
+            .zhezhao-d{
+                color: #fff;
+                margin-left: 0.3rem;
+                margin-top: 0.05rem;
+            }
+        }
+}
